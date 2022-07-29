@@ -14,7 +14,6 @@ For example:
 
 ```did:real:0x70997970C51812dc3A010C7d01b50e0d17dc79C8```
 
-
 ## Method Operations
 
 Real Items DIDs are managed via the Real Items DID registry smart contract.
@@ -52,18 +51,14 @@ Updating the DID is not possible.
 
 ### Deactivate
 
-To deactivate a DID, submit a transaction to the registry contract invoking the `deactivateDid` method.
+Only the controller address is able to deactivate an active DID. To deactivate a DID, submit a transaction to the registry contract invoking the `deactivateDid` method.
 
-Only the controller address is able to deactivate an existing DID.
-
-A deactivated DID cannot be recreated or reactivated.
+A deactivated DID cannot be reactivated.
 
 ## Security Considerations
 
-- 1
-- 2
+- The entity that controls the private key which controls the DID effectively controls the DID document. Proper care should be taken to ensure that the private key is kept secure. Key recovery methods which applies to Ethereum keys apply here. Methods for ensuring key privacy are outside the scope of this document.
 
 ## Privacy Considerations
 
-- 1
-- 2
+- This DID method only stores Ethereum addresses. There are no privacy concerns implicit to the method. However, care must be taken when using a single DID for several purposes if correlation is undesired.
